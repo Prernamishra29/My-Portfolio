@@ -125,7 +125,7 @@ export default function About() {
                 Hello! I'm <span className="font-bold text-emerald-800">Prerna Mishra</span>, a 
                 passionate <span className="font-bold text-emerald-800">Software Developer</span> with a 
                 <span className="font-bold text-emerald-800"> Bachelor's degree in Computer Science</span> from 
-                <span className="font-bold text-emerald-800"> Uttarakhand Technical Uni</span>.
+                <span className="font-bold text-emerald-800"> Uttarakhand Technical University</span>.
               </p>
 
               <p className="text-emerald-700 text-lg">
