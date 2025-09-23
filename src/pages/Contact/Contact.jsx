@@ -125,7 +125,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-emerald-800">Email</h3>
-                      <p className="text-emerald-600">prateek.biot@gmail.com</p>
+                      <p className="text-emerald-600">prernamishra453@gmail.com</p>
                     </div>
                   </div>
 
@@ -135,7 +135,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-emerald-800">Location</h3>
-                      <p className="text-emerald-600">Bareilly, Uttar Pradesh, India</p>
+                      <p className="text-emerald-600">Roorkee, Uttarakhand, India</p>
                     </div>
                   </div>
 
@@ -155,7 +155,7 @@ export default function Contact() {
                   <h4 className="text-lg font-semibold text-emerald-800 mb-4">Connect with me</h4>
                   <div className="flex space-x-4">
                     <motion.a
-                      href="https://www.linkedin.com/in/prateek-singh-8956521ba"
+                      href="https://www.linkedin.com/in/prerna-m-8a296b12b/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-emerald-100 p-3 rounded-lg hover:bg-emerald-200 transition"
@@ -163,17 +163,17 @@ export default function Contact() {
                     >
                       <Linkedin className="w-6 h-6 text-emerald-700" />
                     </motion.a>
-                    {/* <motion.a
-                      href="https://github.com/yourusername"
+                    <motion.a
+                      href="https://github.com/Prernamishra29"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-emerald-100 p-3 rounded-lg hover:bg-emerald-200 transition"
                       whileHover={{ scale: 1.1 }}
                     >
                       <Github className="w-6 h-6 text-emerald-700" />
-                    </motion.a> */}
+                    </motion.a>
                    <motion.a
-  href="mailto:prateek.biot@gmail.com"
+  href="mailto:prernamishra453@gmail.com"
   target="_blank"
   rel="noopener noreferrer"
   className="bg-emerald-100 p-3 rounded-lg hover:bg-emerald-200 transition"

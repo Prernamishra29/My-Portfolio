@@ -21,18 +21,18 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/prateek-singh-8956521ba",
+      url: "https://www.linkedin.com/in/prerna-m-8a296b12b",
       icon: "LinkedIn",
     },
     {
       name: "Email",
-      url: "mailto: prateek.biot@gmail.com",
+      url: "mailto: prernamishra453@gmail.com",
       icon: "Email",
     }
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-emerald-500 to-emerald-600 py-4 px-4 shadow-lg">
+    <footer className="bg-gradient-to-r from-emerald-700 to-emerald-800 py-4 px-4 shadow-lg">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-3">
           {/* Copyright text */}
@@ -43,7 +43,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="text-sm text-white font-medium"
           >
-            © {currentYear} Prateek Singh. All rights reserved.
+            © {currentYear} Prerna Mishra. All rights reserved.
           </motion.div>
 
           {/* Social media links */}

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FlipWords } from "@/components/ui/flip-words";
 import SparklesText from "@/components/ui/sparkles-text";
-import pprofile from "@/assets/images/pprofile.jpg";
+import avatarImage from "@/assets/images/pic.png"; // Ensure you have this image in the specified path
 import PortfolioPage from "@/pages/About/About";
 
 // Floating elements component
@@ -50,7 +50,7 @@ const FloatingElements = () => {
       />
       
       {/* Grid background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
         <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_0%,white)]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -80,14 +80,14 @@ const FloatingElements = () => {
   );
 };
 
-// Animated profile image component
-const ProfileImage = () => {
+// Avatar component with downloaded image
+const AvatarImage = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-20%" });
   
   return (
     <div ref={ref} className="relative">
-      {/* Main image container */}
+      {/* Main avatar container */}
       <motion.div
         className="relative w-64 h-64 md:w-80 md:h-80 mx-auto lg:mx-0"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -115,16 +115,20 @@ const ProfileImage = () => {
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
         />
         
-        {/* Profile image */}
-        <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-white shadow-xl">
+        {/* Avatar image - Using a downloaded image */}
+        <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-white shadow-xl bg-gray-100 flex items-center justify-center">
           <img
-            src={pprofile}
-            alt="Prateek Singh"
+            src={avatarImage} // Replace with your image path
+            alt="Prerna Mishra"
             className="w-full h-full object-cover"
+            onError={(e) => {
+              // Fallback to a placeholder if the image fails to load
+              e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='20' fill='%2304a777'/%3E%3Cpath d='M30,85 C30,65 70,65 70,85 L70,95 L30,95 Z' fill='%2304a777'/%3E%3Ccircle cx='40' cy='35' r='3' fill='white'/%3E%3Ccircle cx='60' cy='35' r='3' fill='white'/%3E%3Cpath d='M40,50 Q50,60 60,50' stroke='white' stroke-width='2' fill='none'/%3E%3C/svg%3E";
+            }}
           />
         </div>
         
-        {/* Floating elements around image */}
+        {/* Floating elements around avatar */}
         <motion.div
           className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-400 rounded-full"
           animate={{ scale: [1, 1.2, 1] }}
@@ -159,28 +163,28 @@ const ProfileImage = () => {
 
 export default function Hero() {
   const words = [
-    "Biotechnology Researcher",
-    "Virology Enthusiast",
-    "Exploring Host-Pathogen Interactions",
-    "Project Associate @ ICAR-IVRI",
+    "Full Stack Developer",
+    "Web Enthusiast",
+    "Problem Solver",
+    "Recent B.Tech Graduate",
   ];
 
   const stats = [
-    { number: "1+", label: "Years Experience" },
-    { number: "2+", label: "Research Projects" },
-    { number: "2+", label: "Publications" },
+    { number: "10+", label: "Projects Completed" },
+    { number: "5+", label: "Technologies Mastered" },
+    { number: "1", label: "Year Experience" },
   ];
 
   return (
     <>
-      <main className="bg-gradient-to-br from-white to-emerald-50 min-h-screen">
+      <main className="bg-white min-h-screen">
         <section className="min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-16 md:py-24 overflow-hidden">
           {/* Background elements */}
           <FloatingElements />
           
           {/* Subtle gradient circles */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-200 rounded-full -translate-y-1/2 translate-x-1/2 opacity-20"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-emerald-100 rounded-full translate-y-1/2 -translate-x-1/2 opacity-30"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-30"></div>
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-emerald-50 rounded-full translate-y-1/2 -translate-x-1/2 opacity-40"></div>
 
           {/* Main content */}
           <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10 gap-12 lg:gap-16">
@@ -195,7 +199,7 @@ export default function Hero() {
               >
                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
                 <span className="text-emerald-700 text-sm font-medium">
-                  Welcome to my research universe
+                  Welcome to my portfolio
                 </span>
               </motion.div>
 
@@ -206,9 +210,9 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="mb-6"
               >
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-emerald-900 leading-tight">
-                  <SparklesText text="Hello" />
-                  <span className="block">I'm <span className="text-emerald-600">Prateek Singh</span></span>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                  <span className="text-emerald-600">Hello,</span>
+                  <span className="block">I'm <span className="text-emerald-600">Prerna Mishra</span></span>
                 </h1>
               </motion.div>
 
@@ -219,7 +223,7 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-100 to-emerald-50 border border-emerald-200 mb-6 backdrop-blur-sm"
               >
-                <i className="fas fa-dna text-emerald-500 text-lg"></i>
+                <i className="fas fa-code text-emerald-500 text-lg"></i>
                 <span className="text-emerald-700 font-medium">
                   <FlipWords words={words} className="text-emerald-700" />
                 </span>
@@ -232,9 +236,9 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="mb-8 max-w-xl mx-auto lg:mx-0"
               >
-                <p className="text-lg text-emerald-700 leading-relaxed">
-     Passionate about unraveling molecular host-pathogen interactions and contributing
-                  to impactful research innovations.
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  A passionate software developer with expertise in modern web technologies. 
+                  I love creating efficient, scalable solutions and solving complex problems through code.
                 </p>
               </motion.div>
 
@@ -275,10 +279,10 @@ export default function Hero() {
 
                 {/* Resume */}
                 <a
-                  href="/CV Prateek.pdf"
+                  href="/Cv Prerna.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  download="Prateek_Singh_Resume.pdf"
+                  download="Prerna_Mishra_Resume.pdf"
                   className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-white border border-emerald-200 transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 >
                   <span className="block w-full px-6 py-3 rounded-[11px] bg-white transition-all duration-300 group-hover:bg-emerald-50">
@@ -291,14 +295,14 @@ export default function Hero() {
               </motion.div>
             </div>
 
-            {/* Right column - Profile image */}
+            {/* Right column - Avatar image */}
             <motion.div 
               className="w-full lg:w-1/2 flex justify-center"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.6 }}
             >
-              <ProfileImage />
+              <AvatarImage />
             </motion.div>
           </div>
 
@@ -321,9 +325,7 @@ export default function Hero() {
           </motion.div>
         </section>
       </main>
-      
-      {/* PortfolioPage component placed OUTSIDE the Hero section */}
-      <PortfolioPage />
+        <PortfolioPage />
     </>
   );
 }
