@@ -147,15 +147,15 @@ const CertificatesSection = () => {
 
   const Card = ({ item, type }) => (
     <motion.div
-      className="bg-white rounded-2xl p-6 shadow-lg border border-emerald-100 h-full flex flex-col"
-      whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(72, 187, 120, 0.15)" }}
+      className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-emerald-100 h-full flex flex-col mx-2 sm:mx-0"
+      whileHover={{ y: -4, boxShadow: "0 10px 30px rgba(72, 187, 120, 0.15)" }}
       transition={{ duration: 0.3 }}
     >
-      <div className="flex items-start justify-between mb-4">
-        <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700">
-          {item.icon || (type === "award" ? <Trophy size={24} /> : <Award size={24} />)}
+      <div className="flex items-start justify-between mb-3 sm:mb-4">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-700 flex-shrink-0">
+          {item.icon || (type === "award" ? <Trophy size={20} className="sm:w-6 sm:h-6 w-5 h-5" /> : <Award size={20} className="sm:w-6 sm:h-6 w-5 h-5" />)}
         </div>
-        <span className="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-full">
+        <span className="px-2 py-1 sm:px-3 sm:py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-full ml-2 flex-shrink-0">
           {type === "certificate"
             ? "Certificate"
             : type === "course"
@@ -168,48 +168,50 @@ const CertificatesSection = () => {
         </span>
       </div>
 
-      <h3 className="text-xl font-bold text-emerald-900 mb-2">{item.title}</h3>
-      <p className="text-emerald-700 mb-2">
+      <h3 className="text-lg sm:text-xl font-bold text-emerald-900 mb-2 line-clamp-2 leading-tight">{item.title}</h3>
+      <p className="text-emerald-700 mb-2 text-sm sm:text-base line-clamp-1">
         {item.issuer || item.organizer}
       </p>
 
       {/* Special award details */}
       {item.position && (
         <div className="mb-3">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white text-xs font-bold rounded-full">
+          <div className="flex flex-wrap items-center gap-2 mb-1">
+            <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white text-xs font-bold rounded-full whitespace-nowrap">
               {item.position}
             </span>
-            <span className="text-xs text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">
+            <span className="text-xs text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full whitespace-nowrap">
               {item.achievementLevel}
             </span>
           </div>
-          <p className="text-sm font-medium text-emerald-800">{item.category}</p>
+          <p className="text-sm font-medium text-emerald-800 line-clamp-1">{item.category}</p>
         </div>
       )}
 
-      <div className="flex items-center gap-3 text-sm text-emerald-600 mb-4">
-        <Calendar size={16} />
-        <span>{item.date}</span>
+      <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-emerald-600 mb-3 sm:mb-4 flex-wrap">
+        <Calendar size={14} className="sm:w-4 sm:h-4 w-3 h-3 flex-shrink-0" />
+        <span className="whitespace-nowrap">{item.date}</span>
         {item.location && (
           <>
-            <MapPin size={16} />
-            <span>{item.location}</span>
+            <MapPin size={14} className="sm:w-4 sm:h-4 w-3 h-3 flex-shrink-0" />
+            <span className="whitespace-nowrap">{item.location}</span>
           </>
         )}
       </div>
 
-      <p className="text-emerald-700 mb-4 flex-grow">{item.description}</p>
+      <p className="text-emerald-700 mb-3 sm:mb-4 flex-grow text-sm sm:text-base leading-relaxed line-clamp-3">
+        {item.description}
+      </p>
 
-      <div className="mb-4">
+      <div className="mb-3 sm:mb-4">
         <h4 className="text-sm font-semibold text-emerald-800 mb-2">
           {type === "award" ? "Skills Demonstrated" : "Skills Covered"}
         </h4>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1 sm:gap-2">
           {item.skills.map((skill, index) => (
             <span
               key={index}
-              className="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full"
+              className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full whitespace-nowrap"
             >
               {skill}
             </span>
@@ -217,16 +219,16 @@ const CertificatesSection = () => {
         </div>
       </div>
       
-      <div className="mt-auto pt-4 border-t border-emerald-100 flex justify-between items-center">
-        <span className="text-xs font-mono text-emerald-600">ID: {item.id || "N/A"}</span>
+      <div className="mt-auto pt-3 sm:pt-4 border-t border-emerald-100 flex justify-between items-center">
+        <span className="text-xs font-mono text-emerald-600 truncate mr-2">ID: {item.id || "N/A"}</span>
         <motion.a
           href={item.link}
-          className="flex items-center text-emerald-600 hover:text-emerald-800 font-medium text-sm"
-          whileHover={{ x: 4 }}
+          className="flex items-center text-emerald-600 hover:text-emerald-800 font-medium text-sm whitespace-nowrap"
+          whileHover={{ x: 2 }}
           target="_blank"
           rel="noopener noreferrer"
         >
-          View Details <ExternalLink size={16} className="ml-1" />
+          View <ExternalLink size={14} className="ml-1 hidden sm:inline" />
         </motion.a>
       </div>
     </motion.div>
@@ -234,7 +236,7 @@ const CertificatesSection = () => {
 
   if (loading) {
     return (
-      <section className="py-20 bg-gradient-to-br from-white to-emerald-50">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-white to-emerald-50">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-emerald-700">Loading certifications...</p>
         </div>
@@ -244,7 +246,7 @@ const CertificatesSection = () => {
 
   if (error) {
     return (
-      <section className="py-20 bg-gradient-to-br from-white to-emerald-50">
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-white to-emerald-50">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-emerald-700">{error}</p>
         </div>
@@ -255,30 +257,32 @@ const CertificatesSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-20 bg-gradient-to-br from-white to-emerald-50 overflow-hidden"
+      className="relative py-16 sm:py-20 bg-gradient-to-br from-white to-emerald-50 overflow-hidden"
       id="achievements"
     >
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-emerald-100 rounded-full -translate-x-40 -translate-y-40 opacity-50"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-200 rounded-full translate-x-40 translate-y-40 opacity-30"></div>
-      <div className="absolute inset-0 bg-grid-emerald-900/[0.02] bg-[length:50px_50px]" />
+      <div className="absolute top-0 left-0 w-48 h-48 sm:w-72 sm:h-72 bg-emerald-100 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-emerald-200 rounded-full translate-x-1/2 translate-y-1/2 opacity-30"></div>
+      <div className="absolute inset-0 bg-grid-emerald-900/[0.02] bg-[length:30px_30px] sm:bg-[length:50px_50px]" />
 
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
-        <motion.div className="text-center mb-16" style={{ opacity, scale }}>
-          <h2 className="text-4xl font-bold text-emerald-900 mb-4">Certifications & Achievements</h2>
-          <p className="text-emerald-700 max-w-2xl mx-auto text-lg">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div className="text-center mb-12 sm:mb-16" style={{ opacity, scale }}>
+          <h2 className="text-3xl sm:text-4xl font-bold text-emerald-900 mb-3 sm:mb-4 px-2">
+            Certifications & Achievements
+          </h2>
+          <p className="text-emerald-700 max-w-2xl mx-auto text-base sm:text-lg px-4">
             Continuous learning through specialized courses, workshops, and recognition in competitive hackathons and technical events.
           </p>
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-emerald-100 p-1 rounded-xl">
+        <div className="flex justify-center mb-8 sm:mb-12 px-2">
+          <div className="inline-flex bg-emerald-100 p-1 rounded-xl max-w-full overflow-x-auto">
             {["certificates", "courses", "workshops", "awards"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-3 rounded-xl text-sm font-medium transition-all ${
+                className={`px-3 sm:px-6 py-2 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                   activeTab === tab
                     ? "bg-white text-emerald-800 shadow-md"
                     : "text-emerald-600 hover:text-emerald-800"
@@ -299,7 +303,7 @@ const CertificatesSection = () => {
         {/* Cards */}
         {activeTab === "certificates" && (
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -312,7 +316,7 @@ const CertificatesSection = () => {
 
         {activeTab === "courses" && (
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -325,7 +329,7 @@ const CertificatesSection = () => {
 
         {activeTab === "workshops" && (
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -338,7 +342,7 @@ const CertificatesSection = () => {
 
         {activeTab === "awards" && (
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -349,6 +353,27 @@ const CertificatesSection = () => {
           </motion.div>
         )}
       </div>
+
+      <style jsx>{`
+        .line-clamp-1 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+        }
+        .line-clamp-2 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+        .line-clamp-3 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+        }
+      `}</style>
     </section>
   );
 };
