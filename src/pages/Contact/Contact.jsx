@@ -183,7 +183,7 @@ export default function Contact() {
 </motion.a>
 
                     <motion.a
-                      href="https://build-lime-six.vercel.app"
+                      href="https://portolio-kappa-eight.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-emerald-100 p-3 rounded-lg hover:bg-emerald-200 transition"
