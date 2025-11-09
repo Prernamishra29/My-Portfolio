@@ -158,7 +158,7 @@ const ExperienceSection = () => {
             Professional Experience
           </h3>
           <p className="text-lg text-emerald-800/90 max-w-2xl leading-relaxed">
-            Bridging biotechnology with software development through diverse professional experiences
+            Bridging technology and software development through practical experience.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full mt-4"></div>
         </div>
