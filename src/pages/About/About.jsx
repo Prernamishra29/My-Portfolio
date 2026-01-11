@@ -28,10 +28,10 @@ const itemVariants = {
 // Stats component
 const StatsSection = () => {
   const stats = [
-    { icon: <Code size={20} />, value: "15+", label: "Projects Completed" },
-    { icon: <Globe size={20} />, value: "8+", label: "Technologies Mastered" },
+    { icon: <Code size={20} />, value: "5+", label: "Projects Completed" },
+    { icon: <Globe size={20} />, value: "5+", label: "Technologies Mastered" },
     { icon: <Cpu size={20} />, value: "1+", label: "Years Experience" },
-    { icon: <Database size={20} />, value: "5", label: "Databases Worked With" }
+    { icon: <Database size={20} />, value: "2", label: "Databases Worked With" }
   ];
 
   return (

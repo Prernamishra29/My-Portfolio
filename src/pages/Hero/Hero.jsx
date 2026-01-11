@@ -170,7 +170,7 @@ export default function Hero() {
   ];
 
   const stats = [
-    { number: "10+", label: "Projects Completed" },
+    { number: "5+", label: "Projects Completed" },
     { number: "5+", label: "Technologies Mastered" },
     { number: "1", label: "Year Experience" },
   ];
@@ -278,20 +278,20 @@ export default function Hero() {
                 </a>
 
                 {/* Resume */}
-                <a
-                  href="/Cv Prerna.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download="Prerna_Mishra_Resume.pdf"
-                  className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-white border border-emerald-200 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                >
-                  <span className="block w-full px-6 py-3 rounded-[11px] bg-white transition-all duration-300 group-hover:bg-emerald-50">
-                    <span className="relative flex items-center justify-center gap-2 text-emerald-700 font-medium">
-                      <span>Get Resume</span>
-                      <i className="fas fa-file-alt transform transition-all duration-300 group-hover:rotate-12"></i>
-                    </span>
-                  </span>
-                </a>
+              <a
+  href="/CV_Prerna.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-white border border-emerald-200 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+>
+  <span className="block w-full px-6 py-3 rounded-[11px] bg-white transition-all duration-300 group-hover:bg-emerald-50">
+    <span className="relative flex items-center justify-center gap-2 text-emerald-700 font-medium">
+      <span>Get Resume</span>
+      <i className="fas fa-file-alt transform transition-all duration-300 group-hover:rotate-12"></i>
+    </span>
+  </span>
+</a>
+
               </motion.div>
             </div>
 
