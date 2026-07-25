@@ -27,7 +27,7 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/prerna-m-8a296b12b",
+      url: "https://www.linkedin.com/in/prerna-m",
       icon: "LinkedIn",
     },
     {
