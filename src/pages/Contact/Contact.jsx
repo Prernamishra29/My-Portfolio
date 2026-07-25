@@ -155,7 +155,7 @@ export default function Contact() {
                   <h4 className="text-lg font-semibold text-emerald-800 mb-4">Connect with me</h4>
                   <div className="flex space-x-4">
                     <motion.a
-                      href="https://www.linkedin.com/in/prerna-m-8a296b12b/"
+                      href="https://www.linkedin.com/in/prerna-m/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-emerald-100 p-3 rounded-lg hover:bg-emerald-200 transition"
